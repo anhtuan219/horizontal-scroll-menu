@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { HorizontalMenu } from "./components/HorizontalNavMenu";
+import { VanillaHorizontalMenu } from "./components/VanillaHorizontalMenu";
 import "./App.css";
 
 interface MenuItem {
@@ -8,7 +9,7 @@ interface MenuItem {
 }
 
 function App() {
-  const [items, setItems] = useState<MenuItem[]>([
+  const [items] = useState<MenuItem[]>([
     { id: "1", label: "Getting Started" },
     { id: "2", label: "Design Principles" },
     { id: "3", label: "Component Library" },
@@ -33,8 +34,17 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Horizontal Scroll Menu (with navigate arrows)</h1>
-      <HorizontalMenu items={items} />
+      <h1>Horizontal Scroll Menu</h1>
+
+      <div className="demo-section">
+        <h2>Swiper.js Version</h2>
+        <HorizontalMenu items={items} />
+      </div>
+
+      <div className="demo-section">
+        <h2>Vanilla JS Version</h2>
+        <VanillaHorizontalMenu items={items} />
+      </div>
     </div>
   );
 }

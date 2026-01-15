@@ -1,0 +1,104 @@
+﻿/* Menu Container with Arrows */
+.vanilla-menu-container {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Scroller - handles horizontal scroll */
+.vanilla-menu-scroller {
+    flex: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+}
+
+.vanilla-menu-scroller::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+/* Track - flex container for slides */
+.vanilla-menu-track {
+    display: flex;
+    gap: 16px;
+    width: fit-content;
+}
+
+/* Slide - auto width based on content */
+.vanilla-menu-slide {
+    flex-shrink: 0;
+    width: auto;
+}
+
+/* Navigation Arrows */
+.vanilla-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #ffffff;
+    border: 1px solid rgba(5, 5, 5, 0.05);
+    border-radius: 8px;
+    cursor: pointer;
+    color: #000000;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.vanilla-arrow:hover {
+    background: #fafaf9;
+    border-color: rgba(5, 5, 5, 0.1);
+}
+
+.vanilla-arrow:active {
+    transform: translateY(-50%) scale(0.96);
+}
+
+.vanilla-arrow-prev {
+    left: 8px;
+}
+
+.vanilla-arrow-next {
+    right: 8px;
+}
+
+/* Chip Styling */
+.vanilla-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    background: white;
+    border-radius: 100px;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.vanilla-chip:hover {
+    background: #f0f0ef;
+}
+
+.vanilla-chip:active {
+    transform: scale(0.96);
+}
+
+/* Chip Label */
+.vanilla-chip-label {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.47;
+    letter-spacing: -0.006em;
+    color: #2d2c2a;
+    text-align: center;
+}
